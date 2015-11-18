@@ -1,0 +1,24 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <a href="#/coffees" class="btn btn-default">go back</a>
+        {{selected.name}} by {{selected.brand}} 
+    </div>
+    <div class="panel-body">
+        <table id="coffeeTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Reviewer</th>
+                    <th>Comment</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="review in selected.reviews">
+                    <td>{{review.reviewer}}</td>
+                    <td>{{review.comment}}</td>
+                    <td><uib-rating ng-model="review.rating" max="max" readonly="isReadonly" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

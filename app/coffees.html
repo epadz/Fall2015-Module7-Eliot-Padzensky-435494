@@ -1,0 +1,25 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <input type="text" id="search" placeholder="search" ng-model="query" class="form-control">
+    </div>
+    <div class="panel-body">
+        <table id="coffeeTable" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Link</th>
+                    <th>Brand</th>
+                    <th>Name</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="coffee in coffees | orderBy:'name' | filter:query">
+                    <td><a href="#/coffees/{{coffee.id}}">reviews</a></td>
+                    <td>{{coffee.brand}}</td>
+                    <td>{{coffee.name}}</td>
+                    <td>{{coffee.country}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
